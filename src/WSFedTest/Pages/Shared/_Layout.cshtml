@@ -1,4 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims;
+@using System.Security.Cryptography;
+@using System.Text;
+
+@functions
+{
+    public bool IsAuthenticated()
+    {
+        return Context.User.Identity.IsAuthenticated;
+    }
+
+    public string UserUsername()
+    {
+        return User.FindFirst(c => c.Type == ClaimTypes.Name)?.Value;
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,8 +39,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Private">Private</a>
                         </li>
+                        @if(this.IsAuthenticated())
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Logout</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

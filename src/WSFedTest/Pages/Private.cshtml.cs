@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace WSFedTest.Pages
 {
-    public class PrivacyModel : PageModel
+    public class PrivateModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+        private readonly ILogger<PrivateModel> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public PrivateModel(ILogger<PrivateModel> logger)
         {
             _logger = logger;
         }
