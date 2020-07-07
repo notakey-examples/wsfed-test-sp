@@ -22,3 +22,11 @@ docker service create \
 ADFS_URL_PREFIX - prefix of your AD FS service, e.g. https://adfs.example.com
 
 RP_ENTITY_ID - Relay Party identifier as entered in AD FS RP configuration
+
+* Create RP in AD FS
+
+```powershell
+Add-AdfsRelyingPartyTrust -Name "WS-Fed test SP" -Notes "This is a test" -Identifier https://mywsfed.example.com/ -WSFedEndpoint https://mywsfed.example.com/signin-wsfed -IssuanceAuthorizationRules '@RuleTemplate = "AllowAllAuthzRule" => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");' -IssueOAuthRefreshTokensTo NoDevice
+Set-AdfsRelyingPartyTrust -TargetName "WS-Fed test SP" -ClaimsProviderName @("Active Directory")
+Set-AdfsRelyingPartyTrust -TargetName "WS-Fed test SP" -ClaimsProviderName @("Other claims provider")
+```
