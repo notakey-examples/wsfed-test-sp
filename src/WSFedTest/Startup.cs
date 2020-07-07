@@ -25,6 +25,9 @@ namespace WSFedTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var adfsPrefix = Environment.GetEnvironmentVariable("ADFS_URL_PREFIX");
+            var entityID = Environment.GetEnvironmentVariable("RP_ENTITY_ID");
+
             services.AddAuthentication(sharedOptions =>
             {
                 sharedOptions.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -34,8 +37,8 @@ namespace WSFedTest
             })
             .AddWsFederation(options =>
             {
-                options.Wtrealm = "https://mysso.notakey.com/";
-                options.MetadataAddress = "https://fs5.notakey.com/federationmetadata/2007-06/federationmetadata.xml";
+                options.Wtrealm = entityID;
+                options.MetadataAddress = String.Format("{0}/federationmetadata/2007-06/federationmetadata.xml", adfsPrefix);
                 options.CallbackPath = "/signin-wsfed";
 
             })

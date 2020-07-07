@@ -2,10 +2,12 @@
     "profiles": {
         "WSFedTest": {
             "commandName": "Project",
-            // "launchBrowser": true,
+            "launchBrowser": true,
             "applicationUrl": "http://0.0.0.0:27969",
             "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ADFS_URL_PREFIX": "https://adfs.example.com",
+                "RP_ENTITY_ID": "https://my-ws-fed-test.example.com/"
             }
         }
     }

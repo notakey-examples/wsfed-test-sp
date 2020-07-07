@@ -6,33 +6,33 @@
    </t:Lifetime>
    <wsp:AppliesTo xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
       <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
-         <wsa:Address>https://mysso.notakey.com/</wsa:Address>
+         <wsa:Address>https://mysso.example.com/</wsa:Address>
       </wsa:EndpointReference>
    </wsp:AppliesTo>
    <t:RequestedSecurityToken>
-      <saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" MajorVersion="1" MinorVersion="1" AssertionID="_2ab6fb59-b608-4051-8d11-ab7bb9cca860" Issuer="http://fs5.notakey.com/adfs/services/trust" IssueInstant="2020-07-06T17:04:18.945Z">
+      <saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" MajorVersion="1" MinorVersion="1" AssertionID="_2ab6fb59-b608-4051-8d11-ab7bb9cca860" Issuer="http://fs5.example.com/adfs/services/trust" IssueInstant="2020-07-06T17:04:18.945Z">
          <saml:Conditions NotBefore="2020-07-06T17:04:18.945Z" NotOnOrAfter="2020-07-06T18:04:18.945Z">
             <saml:AudienceRestrictionCondition>
-               <saml:Audience>https://mysso.notakey.com/</saml:Audience>
+               <saml:Audience>https://mysso.example.com/</saml:Audience>
             </saml:AudienceRestrictionCondition>
          </saml:Conditions>
          <saml:AttributeStatement>
             <saml:Subject>
-               <saml:NameIdentifier Format="http://schemas.xmlsoap.org/claims/UPN">iasmanis@notakey.com</saml:NameIdentifier>
+               <saml:NameIdentifier Format="http://schemas.xmlsoap.org/claims/UPN">iasmanis@example.com</saml:NameIdentifier>
                <saml:SubjectConfirmation>
                   <saml:ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:bearer</saml:ConfirmationMethod>
                </saml:SubjectConfirmation>
             </saml:Subject>
             <saml:Attribute AttributeName="upn" AttributeNamespace="http://schemas.xmlsoap.org/ws/2005/05/identity/claims">
-               <saml:AttributeValue>iasmanis@notakey.com</saml:AttributeValue>
+               <saml:AttributeValue>ewrstyui@example.com</saml:AttributeValue>
             </saml:Attribute>
             <saml:Attribute AttributeName="primarysid" AttributeNamespace="http://schemas.microsoft.com/ws/2008/06/identity/claims">
-               <saml:AttributeValue>S-1-5-21-1798198472-7554499-667194821-1113</saml:AttributeValue>
+               <saml:AttributeValue>S-1-5-21-wertyui</saml:AttributeValue>
             </saml:Attribute>
          </saml:AttributeStatement>
          <saml:AuthenticationStatement AuthenticationMethod="urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" AuthenticationInstant="2020-07-06T17:04:18.883Z">
             <saml:Subject>
-               <saml:NameIdentifier Format="http://schemas.xmlsoap.org/claims/UPN">iasmanis@notakey.com</saml:NameIdentifier>
+               <saml:NameIdentifier Format="http://schemas.xmlsoap.org/claims/UPN">iasmanis@example.com</saml:NameIdentifier>
                <saml:SubjectConfirmation>
                   <saml:ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:bearer</saml:ConfirmationMethod>
                </saml:SubjectConfirmation>
