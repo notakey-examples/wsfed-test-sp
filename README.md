@@ -1,6 +1,6 @@
 # WS-Fed test service provider
 
-This is a simple ASP.NET project for testing federated autehntication with Microsoft.AspNetCore.Authentication.WsFederation.
+This is a simple ASP.NET project for testing federated authentication with Microsoft.AspNetCore.Authentication.WsFederation.
 
 ## Running
 
