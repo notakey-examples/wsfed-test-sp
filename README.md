@@ -10,6 +10,7 @@ This is a simple ASP.NET project for testing federated autehntication with Micro
 
 ```shell
 docker service create \
+    ... your publishing details here ...
     --name my-wsfed-test \
     --net xyz \
     -e ADFS_URL_PREFIX=https://adfs.example.com \
