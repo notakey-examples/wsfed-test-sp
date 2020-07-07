@@ -15,7 +15,7 @@ RUN apk add --no-cache curl && rm -rf /var/cache/apk/*
 
 COPY ./assets/docker_entrypoint.sh ./
 
-HEALTHCHECK CMD curl --fail http://localhost:5000/health || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1
 EXPOSE 5000
 
 ENV ASPNETCORE_URLS http://0.0.0.0:5000
